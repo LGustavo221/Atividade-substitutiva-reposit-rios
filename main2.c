@@ -198,24 +198,7 @@ Tarefa *buscarTarefa(Tarefa *raiz, int id) {
         return buscarTarefa(raiz->direita, id);
 }
 
-// Função para ordenar a fila
-void ordenarFila(Fila *fila) {
-    if (!fila->inicio || !fila->inicio->proximo) return; // Se a fila estiver vazia ou tiver apenas um item
 
-    NodoFila *i = fila->inicio;
-    while (i) {
-        NodoFila *j = i->proximo;
-        while (j) {
-            if (i->tarefa->prioridade > j->tarefa->prioridade) {
-                Tarefa *temp = i->tarefa;
-                i->tarefa = j->tarefa;
-                j->tarefa = temp;
-            }
-            j = j->proximo;
-        }
-        i = i->proximo;
-    }
-}
 
 // Função principal com menu interativo
 int main() {
